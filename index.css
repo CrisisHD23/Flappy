@@ -1,0 +1,10 @@
+.bird{
+    background-color: #f00;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0%;
+    animation: bird-move 1s infinite;
+}

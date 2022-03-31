@@ -13,6 +13,7 @@ class Pipe {
       fill(255);
       rect(this.x, 0, this.w, this.top);
       rect(this.x, this.bottom, this.w, height);
+      console.log('it works')
     };
   
     update() {
