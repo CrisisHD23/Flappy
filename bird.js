@@ -25,8 +25,10 @@ class Bird {
     };
 
     setY(y){
+      if(y >= 0 && y + this.height <= document.body.offsetHeight){
       this.y = y;
       this.div.style.top = y + 'px';
+      }
     }
 
     setX(x){
@@ -34,10 +36,10 @@ class Bird {
       this.div.style.left = x + 'px';
     }
   
-    show() {
+    /*show() {
       fill(255);
       ellipse(this.x, this.y, 16, 16);
-    };
+    };*/
   
     up() {
       this.setY(this.y - this.velocity);
@@ -48,17 +50,18 @@ class Bird {
     }
   
     update() {
-      this.velocity += this.gravity;
-      this.y += this.velocity;
-  
-      if (this.y > height) {
-        this.y = height;
-        this.velocity = 0;
+      game.pipes.forEach(pipe => {
+        if (this.isColision(pipe)) {
+          game.stop();
+        }
+      })
+    };
+    isColision(pipe) {
+      if (this.x + this.width >= pipe.x && this.x <= pipe.x + pipe.w) {
+        if (this.y <= pipe.top || this.y + this.height >= pipe.bottom) {
+          return true;
+        }
       }
-
-      if (this.y < 0) {
-        this.y = 0;
-        this.velocity = 0;
-      };
+      return false;
     };
   };

@@ -8,3 +8,45 @@
     border-radius: 0%;
     animation: bird-move 1s infinite;
 }
+
+.pipe{
+    position: absolute;
+    animation: pipe-move 1s infinite;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+}
+
+#pipes{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-pipe{
+    background-color: blue;
+    top: 0;
+    position: absolute;
+}
+
+.bottom-pipe{
+    background-color: blue;
+    bottom: 0;
+    position: absolute;
+}
+
+body{
+    margin: 0;
+}
+
+#score{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgb(0, 90, 41);
+    color: white;
+    padding: 20px;
+}
