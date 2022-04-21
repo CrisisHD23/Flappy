@@ -1,5 +1,6 @@
 class Pipe {
-    constructor() {
+    constructor(game) {
+      this.game = game;
       let holeHeight = 150;
       let minPipeHeight = 50;
       let dynamicPipeHeight = innerHeight - holeHeight - minPipeHeight*2;
@@ -11,7 +12,7 @@ class Pipe {
       this.speed = 6;
       this.element = document.createElement('div');
       this.element.className = 'pipe';
-      document.getElementById('pipes').appendChild(this.element);
+      if(game.render)  document.getElementById('pipes').appendChild(this.element);
       let divTop = document.createElement('div');
       divTop.className = 'top-pipe';
       let divBottom = document.createElement('div');
@@ -49,8 +50,8 @@ class Pipe {
 
     destroy() {
       this.element.remove();
-      game.pipes = game.pipes.filter(pipe => pipe.id !== this.id);
-      game.addPoint();
+      this.game.pipes = this.game.pipes.filter(pipe => pipe.id !== this.id);
+      this.game.addPoint();
     }
 
   };
