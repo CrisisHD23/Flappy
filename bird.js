@@ -18,7 +18,7 @@ class Bird {
     this.downKeyIsPressed = false;
     this.game = game;
 
-    document.body.addEventListener('keydown', (e) => {        
+    document.body.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowUp') {
         this.upKeyIsPressed = true;
       }
@@ -27,7 +27,7 @@ class Bird {
       }
     });
 
-    document.body.addEventListener('keyup', (e) => {  
+    document.body.addEventListener('keyup', (e) => {
       if (e.key === 'ArrowUp') {
         this.upKeyIsPressed = false;
       }
@@ -36,11 +36,14 @@ class Bird {
       }
     });
 
+    this.buttonUp = document.getElementById('control-button-up');
+    this.buttonDown = document.getElementById('control-button-down');
+
   };
 
   setY(y) {
     if (y >= 0 && y + this.height <= document.body.offsetHeight) {
-      this.y = y;      
+      this.y = y;
     }
   }
 
@@ -63,13 +66,25 @@ class Bird {
       }
     });
 
-    if(this.upKeyIsPressed) this.up();
-    if(this.downKeyIsPressed) this.down();
+    if (this.upKeyIsPressed) this.up();
+    if (this.downKeyIsPressed) this.down();
   };
 
-  show(){
+  show() {
     this.div.style.left = this.x + 'px';
     this.div.style.top = this.y + 'px';
+
+    if (this.upKeyIsPressed) {
+      this.buttonUp.className = 'pressed';
+    } else {
+      this.buttonUp.className = '';
+    }
+
+    if (this.downKeyIsPressed) {
+      this.buttonDown.className = 'pressed';
+    } else {
+      this.buttonDown.className = '';
+    }
   }
 
 

@@ -2,6 +2,13 @@ function fatorRandom() {
     return (Math.random() * 2000) - 1000;
 }
 
+function mutacao(v) {
+    let nv = v + (Math.random() * 100) - 50;
+    if(nv < -1000) nv = -1000;
+    if(nv > 1000) nv = 1000;
+    return nv;
+}
+
 let Acao = {
     cima: 1,
     baixo: 2
@@ -48,6 +55,15 @@ class NeuronioEntrada {
         else this.valorCalulado = 0;
         return this.valorCalulado;
     }  
+
+    mutar() {
+        this.fator = {
+            distanciaFrontTop: mutacao(this.fator.distanciaFrontTop),
+            distanciaFrontBot: mutacao(this.fator.distanciaFrontBot),
+            distanciaBackTop: mutacao(this.fator.distanciaBackTop),
+            distanciaBackBot: mutacao(this.fator.distanciaBackBot),
+        }
+    }
 }
 
 class NeuronioSaida {
@@ -70,6 +86,12 @@ class NeuronioSaida {
         if(valor > 0) return this.acao;
         return null;
     } 
+
+    mutar() {
+        for(let i = 0; i < this.multiplicadores.length; i++){
+            this.multiplicadores[i] = mutacao(this.multiplicadores[i]);
+        }  
+    }
 }
 
 class Rede {
@@ -82,6 +104,13 @@ class Rede {
         let rede = new Rede();
 
         rede.entradas = [
+            new NeuronioEntrada(),
+            new NeuronioEntrada(),
+            new NeuronioEntrada(),
+            new NeuronioEntrada(),
+            new NeuronioEntrada(),
+            new NeuronioEntrada(),
+            new NeuronioEntrada(),
             new NeuronioEntrada(),
             new NeuronioEntrada(),
             new NeuronioEntrada(),
@@ -102,6 +131,13 @@ class Rede {
         rede.saidas = data.saidas.map(x => Object.assign(new NeuronioSaida(), x));
         return rede;
     }
+
+    static mutacao(redeBase) {
+        let rede = Rede.import(redeBase);
+        rede.entradas.forEach(x => x.mutar());
+        rede.saidas.forEach(x => x.mutar());
+        return rede;
+    }
     
     checar(frameInfo) {
         this.entradas.forEach(x => x.calular(frameInfo));
@@ -115,6 +151,10 @@ class Rede {
 
     exportar() {
         console.log(JSON.stringify(this));
+    }
+
+    mutar() {
+
     }
 }
 

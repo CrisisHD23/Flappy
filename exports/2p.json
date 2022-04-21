@@ -1,0 +1,464 @@
+[
+    {
+        "rede": {
+            "entradas": [
+                {
+                    "fator": {
+                        "distanciaFrontTop": 990.5699666388834,
+                        "distanciaFrontBot": 476.02272434805036,
+                        "distanciaBackTop": -93.60189165334316,
+                        "distanciaBackBot": 135.84717506317247
+                    },
+                    "id": 0.7148961212455369,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -723.3874750962883,
+                        "distanciaFrontBot": 949.8361181434275,
+                        "distanciaBackTop": -631.8838690560758,
+                        "distanciaBackBot": 892.5717218879497
+                    },
+                    "id": 0.9067200713938699,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -37.482260712003836,
+                        "distanciaFrontBot": -565.886582494262,
+                        "distanciaBackTop": -370.4471325332696,
+                        "distanciaBackBot": -547.2780773750636
+                    },
+                    "id": 0.4030007190535807,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 777.2733547184694,
+                        "distanciaFrontBot": 765.855407638607,
+                        "distanciaBackTop": 138.91352782170065,
+                        "distanciaBackBot": -624.5633924333922
+                    },
+                    "id": 0.45268116247300516,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 382.82464717080916,
+                        "distanciaFrontBot": -197.3083872709891,
+                        "distanciaBackTop": -546.72886642813,
+                        "distanciaBackBot": 726.9588724830633
+                    },
+                    "id": 0.3293971658478656,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -872.4630837795089,
+                        "distanciaFrontBot": 232.10760365304668,
+                        "distanciaBackTop": -580.8754635398384,
+                        "distanciaBackBot": 95.98806905498986
+                    },
+                    "id": 0.3422909892628083,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -884.9237362608756,
+                        "distanciaFrontBot": 648.6519669328445,
+                        "distanciaBackTop": -882.274908318693,
+                        "distanciaBackBot": -128.0794855633212
+                    },
+                    "id": 0.8126293050641207,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 416.2864786187854,
+                        "distanciaFrontBot": 309.3981173403856,
+                        "distanciaBackTop": -777.5521141752679,
+                        "distanciaBackBot": 693.4808223770781
+                    },
+                    "id": 0.052836035021962324,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 586.4138885322884,
+                        "distanciaFrontBot": -905.535270815601,
+                        "distanciaBackTop": 902.9284012930857,
+                        "distanciaBackBot": 276.38539382548856
+                    },
+                    "id": 0.8465034404215115,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -457.8310859465655,
+                        "distanciaFrontBot": 416.78194006425065,
+                        "distanciaBackTop": -606.4990140636781,
+                        "distanciaBackBot": -976.1720858090071
+                    },
+                    "id": 0.3555186289916814,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 176.79543670454223,
+                        "distanciaFrontBot": -366.37458510548277,
+                        "distanciaBackTop": 206.23287359987057,
+                        "distanciaBackBot": -2.9149755158152857
+                    },
+                    "id": 0.4622934551971556,
+                    "valorCalulado": 0
+                }
+            ],
+            "saidas": [
+                {
+                    "id": 0.849403120829898,
+                    "acao": 1,
+                    "multiplicadores": [
+                        296.80396136014315,
+                        -924.6465068616887,
+                        -832.904881581106,
+                        167.99629598462093,
+                        504.7448281857596,
+                        428.3535217982562,
+                        -428.57569510161136,
+                        -548.8098206087409,
+                        -898.2819338494971,
+                        255.05580415552095,
+                        -466.7895046264765
+                    ]
+                },
+                {
+                    "id": 0.042509905069957554,
+                    "acao": 2,
+                    "multiplicadores": [
+                        -352.91907522157294,
+                        -374.03248978816396,
+                        907.9241668619416,
+                        628.8996826295547,
+                        -272.150641877774,
+                        -676.6168406772697,
+                        -274.2945508701049,
+                        -920.8306077436225,
+                        790.5849702077949,
+                        786.6580594658533,
+                        484.4762678386153
+                    ]
+                }
+            ]
+        },
+        "execCount": 10,
+        "pontos": 3
+    },
+    {
+        "rede": {
+            "entradas": [
+                {
+                    "fator": {
+                        "distanciaFrontTop": 964.1654966021974,
+                        "distanciaFrontBot": -560.1663559054582,
+                        "distanciaBackTop": -507.2383915864975,
+                        "distanciaBackBot": -262.0038155869664
+                    },
+                    "id": 0.5991433821711929,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -144.33797209523334,
+                        "distanciaFrontBot": 322.92684698382504,
+                        "distanciaBackTop": 781.4131088917677,
+                        "distanciaBackBot": -456.94541109690374
+                    },
+                    "id": 0.4776975939998578,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -857.6268721885185,
+                        "distanciaFrontBot": 400.9434833460882,
+                        "distanciaBackTop": -135.8797997801147,
+                        "distanciaBackBot": 945.5774172734066
+                    },
+                    "id": 0.3917177858893819,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -67.81961571387637,
+                        "distanciaFrontBot": -827.9056501886024,
+                        "distanciaBackTop": -83.63960299943551,
+                        "distanciaBackBot": -538.8514173295227
+                    },
+                    "id": 0.06413583371378473,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -173.29972727527525,
+                        "distanciaFrontBot": 691.753775991795,
+                        "distanciaBackTop": 822.8970394079042,
+                        "distanciaBackBot": -55.856159864565484
+                    },
+                    "id": 0.8483753542576296,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 850.5936386882854,
+                        "distanciaFrontBot": 420.2326536372682,
+                        "distanciaBackTop": 432.21662796209125,
+                        "distanciaBackBot": -752.3636546302796
+                    },
+                    "id": 0.2127429985381799,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -157.14043178705015,
+                        "distanciaFrontBot": -808.0479455918824,
+                        "distanciaBackTop": 940.5838354360387,
+                        "distanciaBackBot": -111.86967663935877
+                    },
+                    "id": 0.48860036808742624,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -791.6433605650948,
+                        "distanciaFrontBot": 674.8122441332991,
+                        "distanciaBackTop": 343.0706031014638,
+                        "distanciaBackBot": -530.2855357653051
+                    },
+                    "id": 0.7536714482247437,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -525.5385038167346,
+                        "distanciaFrontBot": 921.6706843091495,
+                        "distanciaBackTop": -691.2856262570299,
+                        "distanciaBackBot": -519.3822532957438
+                    },
+                    "id": 0.6612250447525725,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 395.6294417198012,
+                        "distanciaFrontBot": -399.6905468410099,
+                        "distanciaBackTop": -601.5374620126659,
+                        "distanciaBackBot": -402.11705434808516
+                    },
+                    "id": 0.9369346575648714,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 505.83395723842045,
+                        "distanciaFrontBot": -480.7161269048561,
+                        "distanciaBackTop": 866.5131145441148,
+                        "distanciaBackBot": 279.6924256931902
+                    },
+                    "id": 0.43724800776233663,
+                    "valorCalulado": 0
+                }
+            ],
+            "saidas": [
+                {
+                    "id": 0.1865882742710281,
+                    "acao": 1,
+                    "multiplicadores": [
+                        -696.7665190050907,
+                        -584.1557419116166,
+                        -22.496596950452954,
+                        -76.4078515463948,
+                        216.58004877986104,
+                        -7.232291086146006,
+                        -39.0239659069573,
+                        -88.16017150307823,
+                        -219.85020076094838,
+                        -947.3118616053897,
+                        -557.828577247407
+                    ]
+                },
+                {
+                    "id": 0.7989456591326585,
+                    "acao": 2,
+                    "multiplicadores": [
+                        -155.43065218659092,
+                        -120.92570951524624,
+                        313.6119141535355,
+                        -476.2381057548239,
+                        -590.6901664167154,
+                        -356.36826879500245,
+                        136.77906200995017,
+                        -494.47858022194515,
+                        -160.0411583541321,
+                        770.7809895502801,
+                        -449.9271369869033
+                    ]
+                }
+            ]
+        },
+        "execCount": 10,
+        "pontos": 2
+    },
+    {
+        "rede": {
+            "entradas": [
+                {
+                    "fator": {
+                        "distanciaFrontTop": 839.3772046625193,
+                        "distanciaFrontBot": -124.32770534731753,
+                        "distanciaBackTop": 279.7542145999623,
+                        "distanciaBackBot": -263.25260327872707
+                    },
+                    "id": 0.931160459243469,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 676.5709879857388,
+                        "distanciaFrontBot": -623.5091604405811,
+                        "distanciaBackTop": 441.7286795936834,
+                        "distanciaBackBot": 931.40757038171
+                    },
+                    "id": 0.12629335368940153,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -392.5112237383721,
+                        "distanciaFrontBot": -264.76640669387575,
+                        "distanciaBackTop": 560.4047369171922,
+                        "distanciaBackBot": 840.3533568763887
+                    },
+                    "id": 0.6302258435126225,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 617.501860297604,
+                        "distanciaFrontBot": -382.4574636832483,
+                        "distanciaBackTop": -583.9215020982892,
+                        "distanciaBackBot": -957.1357972854036
+                    },
+                    "id": 0.8868956357274709,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 431.15265786566647,
+                        "distanciaFrontBot": -873.3877501820797,
+                        "distanciaBackTop": -995.1654303770443,
+                        "distanciaBackBot": 63.250922314816535
+                    },
+                    "id": 0.960191904235379,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -316.96720912405453,
+                        "distanciaFrontBot": -891.8557917158028,
+                        "distanciaBackTop": 58.636632964406544,
+                        "distanciaBackBot": -148.95918339450805
+                    },
+                    "id": 0.8939408137061644,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -46.91530597756264,
+                        "distanciaFrontBot": -542.1257841073523,
+                        "distanciaBackTop": -609.8147755673447,
+                        "distanciaBackBot": 845.1020487346148
+                    },
+                    "id": 0.14316224748462525,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -158.32408963468674,
+                        "distanciaFrontBot": 496.542677824845,
+                        "distanciaBackTop": -588.163433218984,
+                        "distanciaBackBot": -388.90852744700237
+                    },
+                    "id": 0.04664223710951543,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 730.4233542750164,
+                        "distanciaFrontBot": -413.4829960651758,
+                        "distanciaBackTop": -520.8917453442373,
+                        "distanciaBackBot": 585.0569574487313
+                    },
+                    "id": 0.8140100426149071,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": 541.4766965505744,
+                        "distanciaFrontBot": 607.8900926611493,
+                        "distanciaBackTop": -241.69053736840374,
+                        "distanciaBackBot": -625.6803244214657
+                    },
+                    "id": 0.3526835537934583,
+                    "valorCalulado": 0
+                },
+                {
+                    "fator": {
+                        "distanciaFrontTop": -99.13682291682062,
+                        "distanciaFrontBot": -130.24991160670845,
+                        "distanciaBackTop": 343.2907386903987,
+                        "distanciaBackBot": 744.1559097639138
+                    },
+                    "id": 0.23111370932393283,
+                    "valorCalulado": 0
+                }
+            ],
+            "saidas": [
+                {
+                    "id": 0.5468024534957883,
+                    "acao": 1,
+                    "multiplicadores": [
+                        791.2600837630723,
+                        -748.1109364346489,
+                        803.9958808688077,
+                        981.4880448019205,
+                        -221.7065162580618,
+                        908.886293328881,
+                        729.399035298306,
+                        -791.1693568441569,
+                        -702.2838872002133,
+                        280.19562315632743,
+                        -33.481360935641874
+                    ]
+                },
+                {
+                    "id": 0.08943293176512723,
+                    "acao": 2,
+                    "multiplicadores": [
+                        700.9171740078789,
+                        -764.0853362367923,
+                        -938.1645317787597,
+                        -523.1899872292943,
+                        -455.9017426537042,
+                        -358.7076266085685,
+                        666.0828021809505,
+                        -48.01511899475929,
+                        -97.19255651010087,
+                        -785.6495219957465,
+                        525.6621052111359
+                    ]
+                }
+            ]
+        },
+        "execCount": 10,
+        "pontos": 2
+    }
+]
