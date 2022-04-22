@@ -1,5 +1,5 @@
 class ResultadoRede {
-    constructor(redeBase, numeroTestes, mutar, withRender) {
+    constructor(redeBase, numeroTestes, mutar, withRender, name) {
         this.rede = Rede.criar();
         if (redeBase) {
             if (mutar) this.rede = Rede.mutacao(redeBase);
@@ -9,14 +9,16 @@ class ResultadoRede {
         this.pontos = 0;
         this.numeroTestes = numeroTestes;
         this.withRender = withRender;
-    }
+        this.game = null;
+        this.name = name
+    }    
 
     next(onStop) {
         if (this.execCount < this.numeroTestes) {
-            let game = new Game(100000, true, this.withRender, this.rede);
-            game.load(() => {
-                this.pontos += game.points;
-                console.log('Fim Game ' + this.execCount + '. Pontos: ' + game.points + '. Acumulado: ' + this.pontos);
+            this.game = new Game(100000, true, this.withRender, this.rede);
+            this.game.load(() => {
+                this.pontos += this.game.points;
+                log('Fim Game ' + this.execCount + '. Pontos: ' + this.game.points + '. Acumulado: ' + this.pontos);
                 this.execCount++;
                 this.next(onStop);
             });
@@ -24,40 +26,50 @@ class ResultadoRede {
             onStop();
         }
     }
+
+    stop(callback) {
+        this.game.stop(callback);
+    }
 }
 
 class Monitor {
-    constructor(testesPorRede, minRedesPorGeracao) {
+    constructor(testesPorRede, quantidadeRedesInicio) {
         this.resultados = [];
         this.testesPorRede = testesPorRede;
-        this.minRedesPorGeracao = minRedesPorGeracao;
+        this.quantidadeRedesInicio = quantidadeRedesInicio;
         this.storage = new FlappyStorage();
-        console.log('Iniciando Monitor');
+        log('Iniciando Monitor / Chavede treinamento: ' + this.storage.key);
         this.running = false;
     }
 
+    currentResult = null;
     start(withRender) {
-        if (this.running) {
-            let resultado = this.nextRede(withRender);
+        let resultado = this.nextRede(withRender);
             if (resultado) {
-                console.log('Rede ' + (this.resultados.length + 1) + ' criada');
+                log('Rede ' + (this.resultados.length + 1) + ' criada == ' + resultado.name);
+                if(!resultado.next){
+                    debugger;
+                }
                 resultado.next(() => {
-                    this.start();
+                    this.start(withRender);
                 });
                 this.resultados.push(resultado);
+                this.currentResult = resultado;
             } else {
-                this.exportResults();
+                this.exportResults(withRender);
+                log('Fim desta geração. Próxima iniciará em 1 segundos');
+                setTimeout(() => {   
+                    log('Iniciando próxima geração');                 
+                    this.redeControl = {};
+                    this.resultados = [];
+                    this.start(withRender);                    
+                }, 1000);                
             }
-        }
     }
 
-
-    toggle(withRender) {
-        if (this.running) {
-            this.running = false;
-        } else {
-            this.running = true;
-            this.start(withRender);
+    stop(callback) {
+        if(this.currentResult){
+            this.currentResult.stop(callback);
         }
     }
 
@@ -68,41 +80,41 @@ class Monitor {
         // better
         if (lastGen.length > 0 && !this.redeControl['better']) {
             this.redeControl['better'] = true;
-            return new ResultadoRede(lastGen[0].rede, this.testesPorRede, false, withRender);
+            return new ResultadoRede(lastGen[0].rede, this.testesPorRede, false, withRender, '1ª - cópia | Pontos: ' + lastGen[0].pontos);
         }
 
         if (lastGen.length > 0 && (!this.redeControl['better-replicas'] || this.redeControl['better-replicas'] < 15)) {
             if (!this.redeControl['better-replicas']) this.redeControl['better-replicas'] = 0;
             this.redeControl['better-replicas']++;
-            return new ResultadoRede(lastGen[0].rede, this.testesPorRede, true, withRender);
+            return new ResultadoRede(lastGen[0].rede, this.testesPorRede, true, withRender, '1ª - variação ' + this.redeControl['better-replicas'] + ' | Pontos: ' + lastGen[0].pontos);
         }
 
         // better-1
         if (lastGen.length > 1 && !this.redeControl['better-1']) {
             this.redeControl['better-1'] = true;
-            return new ResultadoRede(lastGen[1].rede, this.testesPorRede, false, withRender);
+            return new ResultadoRede(lastGen[1].rede, this.testesPorRede, false, withRender, '2ª - cópia | Pontos: ' + lastGen[1].pontos);
         }
 
-        if (lastGen.length > 1 && (!this.redeControl['better-1-replicas'] || this.redeControl['better-1-replicas'] < 5)) {
+        if (lastGen.length > 1 && (!this.redeControl['better-1-replicas'] || this.redeControl['better-1-replicas'] < 10)) {
             if (!this.redeControl['better-1-replicas']) this.redeControl['better-1-replicas'] = 0;
             this.redeControl['better-1-replicas']++;
-            return new ResultadoRede(lastGen[1].rede, this.testesPorRede, true, withRender);
+            return new ResultadoRede(lastGen[1].rede, this.testesPorRede, true, withRender, '2ª - variação ' + this.redeControl['better-1-replicas'] + ' | Pontos: ' + lastGen[1].pontos);
         }
 
         // better-2
         if (lastGen.length > 2 && !this.redeControl['better-2']) {
             this.redeControl['better-2'] = true;
-            return new ResultadoRede(lastGen[2].rede, this.testesPorRede, false, withRender);
+            return new ResultadoRede(lastGen[2].rede, this.testesPorRede, false, withRender, '3ª - cópia | Pontos: ' + lastGen[2].pontos);
         }
 
-        if (lastGen.length > 2 && (!this.redeControl['better-2-replicas'] || this.redeControl['better-2-replicas'] < 1)) {
+        if (lastGen.length > 2 && (!this.redeControl['better-2-replicas'] || this.redeControl['better-2-replicas'] < 5)) {
             if (!this.redeControl['better-2-replicas']) this.redeControl['better-2-replicas'] = 0;
             this.redeControl['better-2-replicas']++;
-            return new ResultadoRede(lastGen[2].rede, this.testesPorRede, true, withRender);
+            return new ResultadoRede(lastGen[2].rede, this.testesPorRede, true, withRender, '3ª - variação ' + this.redeControl['better-2-replicas'] + ' | Pontos: ' + lastGen[2].pontos);
         }
 
-        if (lastGen.length == 0 && this.resultados.length < this.minRedesPorGeracao) {
-            return new ResultadoRede(null, this.testesPorRede, withRender);
+        if (this.resultados.length < this.quantidadeRedesInicio) {
+            return new ResultadoRede(null, this.testesPorRede, false, withRender, 'Aleatória ' + this.resultados.length);
         }
 
         return null;
@@ -111,17 +123,15 @@ class Monitor {
     exportResults() {
         let resultados = this.resultados.sort((a, b) => a.pontos > b.pontos ? -1 : 1);
         let melhores = resultados.splice(0, 3);
+        melhores.forEach(x => x.game = null);
         console.log(JSON.stringify(melhores));
         this.storage.include(melhores);
-        this.redeControl = {};
-        this.resultados = [];
-        this.start();
-        console.log('Iniciando próxima geração');
     }
 }
 
 class FlappyStorage {
-    key = 'flappy-ml-results-key';
+    // key = 'flappy-ml-results-key';
+    key = 'flappy-ml-results-key-1';
 
     include(generationResult) {
         let data = this.get();
@@ -147,9 +157,8 @@ class FlappyStorage {
         if (data.length) return data[data.length - 1];
         return [];
     }
-};
 
-var monitor;
-document.body.onload = () => {
-    monitor = new Monitor(5, 50);
-}
+    clear() {
+        window.localStorage.removeItem(this.key);
+    }
+};

@@ -6,14 +6,23 @@
 <body>
   <div id="pipes"></div>
   <div id="score"></div>
-  <div class="buttons">
+  <div class="buttons" id="buttons">
     <div id="control-button-up">UP</div>
     <div id="control-button-down">DOWN</div>
   </div>
-  <div class="monitor">
-    <button onclick="monitor.toggle()">Run/Pause</button>
-    <button onclick="monitor.toggle(true)">Run/Pause with Render</button>
+  <div class="monitor" id="monitor">
+    <button onclick="startGame()">Iniciar jogo</button>
+    <button onclick="startGameWithLastLastIA()">Iniciar jogo com melhor IA</button>
+    <button onclick="startTrainingWithRender()">Continuar treinando IA</button>
+    <button onclick="startTrainingWithoutRender()">Continuar treinando IA em background</button>
+    <button onclick="clearTrainedData()">Excluir dados de treinamento</button>
   </div>
+  <div id="console"> </div>
+  <div id="forceStop">
+    <button onclick="forceStop()">Encerrar</button>
+  </div>
+
+  <script src="options.js"></script>
   <script src="bird.js"></script>
   <script src="pipe.js"></script>
   <script src="neural.js"></script>

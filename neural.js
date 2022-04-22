@@ -150,7 +150,7 @@ class Rede {
     } 
 
     exportar() {
-        console.log(JSON.stringify(this));
+        log(JSON.stringify(this));
     }
 
     mutar() {
