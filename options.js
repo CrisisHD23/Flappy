@@ -66,7 +66,7 @@ function startGameWithLastLastIA() {
     let data = st.getLast();
     let rede = data.length ? data[0].rede : null;
 
-    let fps = 200;
+    let fps = 60;
     log('Iniciando jogo com FPS: ' +  fps + ' / IA: SIM');
     mainGame = new Game(fps, true, true, rede);
     mainGame.load(() => {

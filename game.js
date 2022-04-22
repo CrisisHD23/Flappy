@@ -13,6 +13,9 @@ class Game {
         this.usarRede = usarRede;
         this.fps = fps;
         this.isOver = false;
+        if(this.render && this.usarRede){
+            this.sensors = new Sensors(this);
+        }
     }
 
     reset() {
@@ -51,6 +54,9 @@ class Game {
             let acoes = this.rede.checar(frameInfo);
             this.bird.upKeyIsPressed = acoes.indexOf(Acao.cima);
             this.bird.downKeyIsPressed = acoes.indexOf(Acao.baixo);
+            if(this.render){
+                this.sensors.update(this.frameInfoPipeReference);
+            }
         }
 
         this.upOnce = (this.bird.upKeyIsPressed && !this.bird.downKeyIsPressed) || this.upOnce;
@@ -77,6 +83,7 @@ class Game {
             this.pipes[i].show();
         }
         document.getElementById('score').innerHTML = this.points;
+        this.sensors.show();
     }
 
     addPoint() {
@@ -110,10 +117,12 @@ class Game {
         }
     }
 
+    frameInfoPipeReference = null;
     getFrameInfo() {
         let nextPipes = this.pipes.filter(x => x.x + x.w > this.bird.x);
         if (nextPipes.length == 0) return new FrameInfo(0, 0, 0, 0);
         let pipe = nextPipes[0];
+        this.frameInfoPipeReference = pipe;
 
         let s = (v) => v * v;
 

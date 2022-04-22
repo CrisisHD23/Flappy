@@ -1,14 +1,14 @@
 class Pipe {
     constructor(game) {
       this.game = game;
-      let holeHeight = Math.floor(Math.random() * 150) + 120;
+      let holeHeight = Math.floor(Math.random() * 250) + 130;
       let minPipeHeight = 50;
       let dynamicPipeHeight = innerHeight - holeHeight - minPipeHeight*2;
       this.top = Math.floor(Math.random() * dynamicPipeHeight) + minPipeHeight;
       this.bottom = this.top + holeHeight;
   
       this.x = innerWidth;
-      this.w = Math.floor(Math.random() * 150) + 80;
+      this.w = Math.floor(Math.random() * 300) + 80;
       this.speed = 6;
       this.element = document.createElement('div');
       this.element.className = 'pipe';
